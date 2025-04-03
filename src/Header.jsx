@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 // import './header.css'; // Подключим стили
 // import Button from './button';
-import photo from './assets/react.svg';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);  // Состояние меню
@@ -15,7 +14,7 @@ function Header() {
     <header className="fixed top-0 left-0 w-full bg-black text-white z-50" id="header">
   <div className="container mx-auto flex justify-between items-center py-4 px-6" style={{ maxWidth: '1200px' }}>
     {/* Логотип */}
-    <img className="logo h-12" src="src/assets/react.svg" alt="Laf" />
+    <img className="logo h-12" src="/logo.svg" alt="Laf" />
 
     {/* Меню */}
     <div className={`menu ${isMenuOpen ? 'open' : ''} hidden md:block`}>
@@ -30,7 +29,7 @@ function Header() {
     {/* Дополнительное меню */}
     <div className={`menu ${isMenuOpen ? 'open' : ''} hidden md:block`}>
       <ul className="flex space-x-6">
-        <img src="public/search.svg" alt="Search" className="h-6 mr-2"/>
+        <img src="/search.svg" alt="Search" className="h-6 mr-2"/>
         <li><a className="menu_text text-white hover:text-gray-600" href="#search">Поиск</a></li>
         <li><a className="menu_text text-white hover:text-gray-600" href="#auth">Авторизация</a></li>
       </ul>
