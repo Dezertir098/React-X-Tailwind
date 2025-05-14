@@ -3,7 +3,8 @@ import { useState } from 'react'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-import Header from './Header'; 
+import Header from './Header';
+import Cover from './cover'; 
 import Fotter from './Fotter';
 
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Cover />
       <Fotter /> 
     </div>
   )

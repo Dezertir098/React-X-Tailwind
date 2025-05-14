@@ -1,48 +1,62 @@
 import React, { useState } from 'react';
-// import './header.css'; // Подключим стили
-// import Button from './button';
 
 function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);  // Состояние меню
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Состояние меню
 
-  // Функция для переключения состояния меню на мобильных устройствах
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-black text-white z-50" id="header">
-  <div className="container mx-auto flex justify-between items-center py-4 px-6" style={{ maxWidth: '1200px' }}>
-    {/* Логотип */}
-    <img className="logo h-12" src="/logo.svg" alt="Laf" />
+    <header className="fixed top-0 left-0 w-full bg-black text-white z-50">
+      <div className="container mx-auto flex justify-between items-center py-4 px-6 max-w-screen-xl">
+        {/* Логотип */}
+        <img className="logo h-12" src="/logo.svg" alt="Laf" />
 
-    {/* Меню */}
-    <div className={`menu ${isMenuOpen ? 'open' : ''} hidden md:block`}>
-      <ul className="flex space-x-6">
-        <li><a className="menu_text text-white hover:text-gray-600" href="#main">Главная</a></li>
-        <li><a className="menu_text text-white hover:text-gray-600" href="#about_us">О нас</a></li>
-        <li><a className="menu_text text-white hover:text-gray-600" href="#clothes">Товары</a></li>
-        <li><a className="menu_text text-white hover:text-gray-600" href="#contacts">Контакты</a></li>
-      </ul>
-    </div>
+        {/* Десктопное меню */}
+        <div className="hidden md:flex space-x-8 items-center">
+          <ul className="flex space-x-20 mr-[200px]">
+            <li><a className="text-white hover:text-gray-400 font-semibold" href="#main">Главная</a></li>
+            <li><a className="text-white hover:text-gray-400 font-semibold" href="#about_us">Мужская</a></li>
+            <li><a className="text-white hover:text-gray-400 font-semibold" href="#clothes">Женская</a></li>
+            <li><a className="text-white hover:text-gray-400 font-semibold" href="#contacts">Для детей</a></li>
+          </ul>
+          {/* Кнопка подписки (будет скрыта на мобильных устройствах) */}
+          <button className="px-6 py-2 border border-white bg-black text-white text-sm rounded-[20px] hover:bg-white hover:text-black transition hidden md:block">
+            Подписаться на рассылку
+          </button>
+        </div>
 
-    {/* Дополнительное меню */}
-    <div className={`menu ${isMenuOpen ? 'open' : ''} hidden md:block`}>
-      <ul className="flex space-x-6">
-        <img src="/search.svg" alt="Search" className="h-6 mr-2"/>
-        <li><a className="menu_text text-white hover:text-gray-600" href="#search">Поиск</a></li>
-        <li><a className="menu_text text-white hover:text-gray-600" href="#auth">Авторизация</a></li>
-      </ul>
-    </div>
+        {/* Кнопка бургер-меню для мобильных */}
+        <button className="md:hidden text-white hover:text-gray-400" onClick={toggleMenu}>
+          {/* Мобильная иконка меню (бургер) */}
+          {isMenuOpen ? (
+            <svg className="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          ) : (
+            <svg className="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          )}
+        </button>
+      </div>
 
-    {/* Мобильное меню */}
-    <button className="md:hidden text-white hover:text-gray-600" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-      <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
-    </button>
-  </div>
-</header>
-
-
+      {/* Мобильное меню */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-black px-6 py-4">
+          <ul className="flex flex-col space-y-4">
+            <li><a className="text-white hover:text-gray-400 font-semibold" href="#main" onClick={toggleMenu}>Главная</a></li>
+            <li><a className="text-white hover:text-gray-400 font-semibold" href="#about_us" onClick={toggleMenu}>Мужская</a></li>
+            <li><a className="text-white hover:text-gray-400 font-semibold" href="#clothes" onClick={toggleMenu}>Женская</a></li>
+            <li><a className="text-white hover:text-gray-400 font-semibold" href="#contacts" onClick={toggleMenu}>Для детей</a></li>
+          </ul>
+          <button className="mt-6 w-full px-4 py-2 border border-white text-white rounded-[20px] hover:bg-white hover:text-black transition" onClick={toggleMenu}>
+            Подписаться на рассылку
+          </button>
+        </div>
+      )}
+    </header>
   );
 }
 

@@ -1,37 +1,33 @@
-import React, { useState } from 'react';
-// import './fotter.css'; // Подключим стили
-// import Button from './button';
+import React from 'react';
 
-function Fotter() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);  // Состояние меню
-
-  // Функция для переключения состояния меню на мобильных устройствах
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
+function Footer() {
   return (
-    <footer className="bg-black text-white py-6 w-full" id="footer" style={{ margin: '0 auto', position: 'absolute', bottom: '0', left: '50%', transform: 'translateX(-50%)' }}>
-  <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6" style={{ maxWidth: '1200px' }}>
-    <div className="flex items-center space-x-6 w-full" style={{ maxWidth: '1200px' }}>
-      <div className="flex flex-col items-center text-center md:text-left space-y-2">
-        <p className="text-lg whitespace-nowrap">Правовая информация</p>
-      </div>
-
-      <div className="flex justify-center w-full mt-4">
-        <div className="flex items-center justify-center space-x-2">
-          <img src="/gap.svg" alt="Gap Icon" className="h-6" />
-          <p>г. Москва, Ленинградское шоссе, 13А</p>
+    <footer className="bg-black text-white py-8 w-full">
+      <div className="max-w-[1200px] mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
+        
+        {/* Лого */}
+        <div className="order-3 md:order-1">
+          <img className="h-12" src="/logo.svg" alt="Laf Logo" />
         </div>
-      </div>
 
-      <div className="flex justify-center md:justify-start">
-        <img className="logo h-12" src="/logo.svg" alt="Laf Logo" />
+        {/* Адрес */}
+        <div className="flex flex-col items-center md:items-start text-center md:text-left order-2">
+          <div className="flex items-center gap-2">
+            <img src="/gap.svg" alt="Gap Icon" className="h-5" />
+            <p className="text-sm">г. Москва, Ленинградское шоссе, 13А</p>
+          </div>
+        </div>
+
+        {/* Ссылки */}
+        <div className="order-1 md:order-3">
+          <a href="#" className="text-sm hover:underline">
+            Правовая информация
+          </a>
+        </div>
+
       </div>
-    </div>
-  </div>
-</footer>
+    </footer>
   );
 }
 
-export default Fotter;
+export default Footer;
