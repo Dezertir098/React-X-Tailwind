@@ -8,17 +8,17 @@ const Cust = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
                 <div className="text-black text-center">
-                    <img src="./assets/looks/1.jpg" className="w-full mb-4" />
+                    <img src="/assets/looks/1.jpg" className="w-full mb-4" />
                 </div>
             </div>
             <div>
                 <div className="text-black text-center">
-                    <img src="./assets/looks/2.jpg" className="w-full mb-4" />
+                    <img src="/assets/looks/2.jpg" className="w-full mb-4" />
                 </div>
             </div>
             <div>
                 <div className="text-black text-center">
-                    <img src="./assets/looks/3.jpg" className="w-full mb-4" />
+                    <img src="/assets/looks/3.jpg" className="w-full mb-4" />
                 </div>
             </div>
         </div>

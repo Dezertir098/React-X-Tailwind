@@ -13,7 +13,7 @@ const Form = () => {
       <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
         <img
           className="w-full max-w-full object-cover"
-          src="./assets/form_promo.jpg"
+          src="/assets/form_promo.jpg"
           alt="Промо"
         />
       </div>
