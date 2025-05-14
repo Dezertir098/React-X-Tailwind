@@ -10,7 +10,7 @@ import Form from './Form';
 import Brand from './Brand';
 import Cust from './Cust'; 
 import Map from './Map'; 
-import Footer from './Footer '; 
+import Footer from './Footer'; 
 
 
 
